@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aura Finance | US & UK Mortgage APR Calculator, Debt Consolidation & 0% Balance Transfer Matcher</title>
+<meta name="description" content="Free institutional-grade US ($) and UK (£) financial calculators: Mortgage & Auto Loan APR Amortization Schedule, Credit Card Debt Consolidation Planner, Refinance Break-Even Calculator, FICO 8 / Experian Credit Score Simulator, and 0% Intro APR Card Matcher.">
+<meta name="keywords" content="mortgage APR calculator US UK, auto loan amortization schedule, credit card debt consolidation calculator, refinance break even calculator, FICO score simulator free, Experian UK credit score calculator, 0% intro APR balance transfer cards US UK, TILA Regulation Z calculator, FCA APR calculator">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- JSON-LD Structured Data Schema for Fast Google Search Ranking -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Aura Finance Institutional Calculators",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Tier-1 US ($) and UK (£) Mortgage APR, Debt Consolidation, Refinance Break-Even, FICO/Experian Simulator, and 0% Balance Transfer Matcher."
+}
+</script>
+
+<style>
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f8fafc; color: #0f172a; overflow-x: hidden; }
+  .ad-box { background: #ffffff; border: 2px dashed #64748b; background-image: radial-gradient(#e2e8f0 1px, transparent 1px); background-size: 14px 14px; position: relative; }
+  .native-ad { background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%); border: 2px solid #86efac; box-shadow: 0 4px 12px rgba(5,150,105,0.07); }
+  .card { background: #ffffff; border-radius: 1.25rem; border: 1px solid #e2e8f0; padding: 1.5rem; box-shadow: 0 2px 8px rgba(15,23,42,0.04); }
+  .inp { width: 100%; margin-top: 0.35rem; border-radius: 0.75rem; border: 1.5px solid #cbd5e1; padding: 0.7rem 0.9rem; font-weight: 800; color: #0f172a; background: #f8fafc; outline: none; transition: 0.2s; }
+  .inp:focus { border-color: #059669; background: #ffffff; box-shadow: 0 0 0 3px rgba(5,150,105,0.14); }
+  .btn-p { width: 100%; padding: 0.95rem 1.2rem; border-radius: 0.85rem; background: #059669; color: #ffffff; font-weight: 800; font-size: 0.875rem; transition: 0.2s; cursor: pointer; }
+  .btn-p:hover { background: #047857; transform: translateY(-1px); }
+  input[type="range"] { accent-color: #059669; width: 100%; margin-top: 0.5rem; cursor: pointer; height: 8px; }
+
+  /* Animated Geometric Crystal Brand Logo */
+  @keyframes crystalFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+    50% { transform: translateY(-3px) rotate(5deg) scale(1.07); }
+  }
+  @keyframes facetShimmer {
+    0%, 100% { opacity: 1; filter: brightness(1); }
+    50% { opacity: 0.75; filter: brightness(1.25); }
+  }
+  @keyframes coreSpin {
+    0%, 100% { transform: scale(1); opacity: 0.65; }
+    50% { transform: scale(1.12); opacity: 0.95; }
+  }
+  @keyframes ringPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45); }
+    50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  }
+  .logo-badge { animation: ringPulse 2.8s infinite ease-in-out; }
+  .logo-svg { animation: crystalFloat 3.6s infinite ease-in-out; }
+  .facet-gold { animation: facetShimmer 2.2s infinite ease-in-out; }
+  .facet-core { transform-origin: center; animation: coreSpin 2.6s infinite ease-in-out; }
+</style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+<!-- TOP STICKY ENTERPRISE HEADER -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <button onclick="menu(true)" aria-label="Open Navigation Menu" class="p-2.5 rounded-xl border border-slate-300 text-slate-950 hover:bg-emerald-50 hover:border-emerald-400 font-extrabold transition">☰</button>
+      <a href="#home" onclick="nav('home')" class="flex items-center gap-3 group">
+        <div class="logo-badge w-11 h-11 rounded-xl bg-emerald-50 border-2 border-emerald-400 flex items-center justify-center">
+          <svg class="logo-svg w-8 h-8" viewBox="0 0 64 64" fill="none">
+            <polygon points="32,4 58,18 32,32" fill="#10b981"/>
+            <polygon points="32,4 6,18 32,32" fill="#059669"/>
+            <polygon points="6,18 6,46 32,32" fill="#047857"/>
+            <polygon points="58,18 58,46 32,32" fill="#0d9488"/>
+            <polygon points="6,46 32,60 32,32" fill="#065f46"/>
+            <polygon class="facet-gold" points="58,46 32,60 32,32" fill="#eab308"/>
+            <polygon class="facet-core" points="32,12 48,24 32,36 16,24" fill="#6ee7b7" fill-opacity="0.7"/>
+            <circle cx="32" cy="32" r="3.5" fill="#ffffff"/>
+          </svg>
+        </div>
+        <div class="leading-none">
+          <div class="text-xl sm:text-2xl font-extrabold text-slate-950 tracking-tight">AURA</div>
+          <div class="text-xs sm:text-sm font-extrabold text-emerald-600 tracking-wide">Finance</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Desktop Quick Navigation -->
+    <nav class="hidden lg:flex items-center gap-1 text-xs font-extrabold text-slate-900">
+      <button onclick="nav('home')" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-700 transition">Dashboard</button>
+      <button onclick="nav('mortgage')" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-700 transition">Mortgage APR</button>
+      <button onclick="nav('debt')" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-700 transition">Debt Planner</button>
+      <button onclick="nav('refi')" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-700 transition">Refi Break-Even</button>
+      <button onclick="nav('fico')" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-700 transition">FICO® Simulator</button>
+      <button onclick="nav('cards')" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-700 transition">0% APR Cards</button>
+      <button onclick="nav('guides')" class="px-3 py-2 rounded-lg bg-emerald-50 text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition">📘 YMYL Guides</button>
+    </nav>
+
+    <!-- US / UK Currency Switcher -->
+    <select id="regSel" onchange="setReg(this.value)" aria-label="Select Currency Region" class="bg-slate-100 border border-slate-300 text-slate-950 font-extrabold text-xs sm:text-sm rounded-full px-3.5 py-2 cursor-pointer">
+      <option value="US">🇺🇸 USD ($)</option>
+      <option value="UK">🇬🇧 GBP (£)</option>
+    </select>
+  </div>
+</header>
+
+<!-- SLIDE-OUT SIDE DRAWER MENU -->
+<div id="backdrop" onclick="menu(false)" class="fixed inset-0 bg-slate-950/60 backdrop-blur-xs z-50 hidden"></div>
+<aside id="drawer" class="fixed top-0 left-0 bottom-0 w-76 max-w-[85vw] bg-white z-50 shadow-2xl border-r border-slate-200 transform -translate-x-full transition-transform duration-300 flex flex-col justify-between">
+  <div>
+    <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+      <div class="flex items-center gap-2.5">
+        <div class="logo-badge w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-400 flex items-center justify-center">
+          <svg class="logo-svg w-5 h-5" viewBox="0 0 64 64" fill="none">
+            <polygon points="32,4 58,18 32,32" fill="#10b981"/>
+            <polygon points="32,4 6,18 32,32" fill="#059669"/>
+            <polygon points="6,18 6,46 32,32" fill="#047857"/>
+            <polygon points="58,18 58,46 32,32" fill="#0d9488"/>
+            <polygon points="6,46 32,60 32,32" fill="#065f46"/>
+            <polygon class="facet-gold" points="58,46 32,60 32,32" fill="#eab308"/>
+          </svg>
+        </div>
+        <span class="text-lg font-extrabold text-slate-950">Aura Menu</span>
+      </div>
+      <button onclick="menu(false)" class="p-1.5 rounded-lg text-slate-950 hover:bg-slate-200 font-extrabold">✕</button>
+    </div>
+    <div class="p-4 space-y-5 overflow-y-auto max-h-[calc(100vh-135px)] text-sm font-extrabold">
+      <button onclick="nav('home')" class="w-full py-2.5 px-3.5 rounded-xl bg-emerald-600 text-white text-left shadow-xs">🏠 Home Dashboard</button>
+      <div>
+        <p class="px-2 text-[11px] uppercase tracking-wider text-slate-500 mb-2">5 Core Financial Engines</p>
+        <div class="space-y-1 text-slate-950">
+          <button onclick="nav('mortgage')" class="w-full py-2 px-3 rounded-lg hover:bg-slate-100 flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Mortgage & Auto APR</button>
+          <button onclick="nav('debt')" class="w-full py-2 px-3 rounded-lg hover:bg-slate-100 flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Debt Consolidation</button>
+          <button onclick="nav('refi')" class="w-full py-2 px-3 rounded-lg hover:bg-slate-100 flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>Refinance Break-Even</button>
+          <button onclick="nav('fico')" class="w-full py-2 px-3 rounded-lg hover:bg-slate-100 flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>FICO® Score Simulator</button>
+          <button onclick="nav('cards')" class="w-full py-2 px-3 rounded-lg hover:bg-slate-100 flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>0% Intro Card Matcher</button>
+        </div>
+      </div>
+      <div>
+        <p class="px-2 text-[11px] uppercase tracking-wider text-slate-500 mb-2">YMYL & Corporate Compliance</p>
+        <div class="space-y-1 text-slate-950">
+          <button onclick="nav('guides')" class="w-full py-2 px-3 rounded-lg bg-emerald-50 text-emerald-950 border border-emerald-200 text-left">📘 YMYL Financial Guides</button>
+          <button onclick="nav('about')" class="w-full py-2 px-3 rounded-lg hover:bg-slate-100 text-left">About Us</button>
+          <button onclick="nav('privacy')" class="w-full py-2 px-3 rounded-lg hover:bg-slate-100 text-left">Privacy Policy</button>
+          <button onclick="nav('terms')" class="w-full py-2 px-3 rounded-lg hover:bg-slate-100 text-left">Terms & Conditions</button>
+          <button onclick="nav('disclaimer')" class="w-full py-2 px-3 rounded-lg hover:bg-slate-100 text-left">Financial Disclaimer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="p-4 bg-slate-100 border-t border-slate-300 text-center">
+    <p class="text-xs font-extrabold text-slate-950">© 2026 Aura Finance. All rights reserved.</p>
+  </div>
+</aside>
+
+<!-- MAIN WORKSPACE -->
+<main class="flex-grow max-w-7xl w-full mx-auto px-4 py-6 space-y-9">
+
+  <!-- ===================================================================== -->
+  <!-- TOP WEBSITE LEADERBOARD BANNER AD (728x90 — VISIBLE ACROSS SITE)      -->
+  <!-- ===================================================================== -->
+  <div class="ad-box rounded-2xl p-4 text-center shadow-xs">
+    <div class="flex items-center justify-between max-w-[728px] mx-auto mb-1.5 px-1">
+      <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-500">Sponsored Website Banner Ad (728×90 Leaderboard)</span>
+      <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 text-[10px] font-extrabold">AdSense / Adsterra Slot #1</span>
+    </div>
+    <!-- PASTE YOUR 728x90 BANNER AD SCRIPT BELOW THIS LINE -->
+    <div class="max-w-[728px] min-h-[90px] mx-auto rounded-xl bg-gradient-to-r from-slate-900 via-emerald-950 to-slate-900 text-white p-4 flex flex-col sm:flex-row items-center justify-between gap-3 border border-emerald-500/40">
+      <div class="text-left space-y-0.5">
+        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-400">Verified Tier-1 US & UK Lending Network</span>
+        <p class="text-sm sm:text-base font-extrabold">Lock In 5.49% Fixed Mortgage Refinance & 0% APR Balance Transfer Offers</p>
+        <p class="text-[11px] font-bold text-slate-300">Instant Soft-Search Pre-Approval • Zero Impact to Your FICO® or Experian Credit Score</p>
+      </div>
+      <button onclick="nav('cards')" class="shrink-0 px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider transition">Check Rates →</button>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 1: HOME DASHBOARD (HERO + RELIABILITY + 5 TOOLS + NATIVE ADS)    -->
+  <!-- ===================================================================== -->
+  <section id="v-home" class="space-y-10">
+
+    <!-- Institutional Hero Header -->
+    <div class="card sm:p-10 space-y-5 border-2 border-slate-200/90">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs font-extrabold uppercase">● Tier-1 US ($) & UK (£) Financial Intelligence Portal</span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-300 text-slate-900 text-xs font-extrabold">✓ Verified Actuarial Formulas</span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-300 text-amber-900 text-xs font-extrabold">★ YMYL Regulatory Compliant</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-950 leading-tight tracking-tight">
+        Institutional-Grade APR, Credit & Amortization Engines.
+      </h1>
+      <p class="text-sm sm:text-base font-bold text-slate-800 leading-relaxed max-w-4xl">
+        Welcome to Aura Finance. Engineered for households, prospective homebuyers, borrowers, and financial analysts across the United States ($ USD) and the United Kingdom (£ GBP), our deterministic calculators empower you to audit mortgage amortization schedules, structure 22%+ credit card debt consolidations, evaluate refinance break-even horizons, and simulate FICO® 8 / Experian credit score trajectories with 100% client-side browser privacy.
+      </p>
+      <div class="flex flex-wrap gap-3 pt-1">
+        <button onclick="nav('mortgage')" class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs sm:text-sm shadow-sm transition">Launch Mortgage & Auto APR Tool →</button>
+        <button onclick="nav('cards')" class="px-6 py-3.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-xs sm:text-sm shadow-sm transition">Compare 0% Intro APR Cards</button>
+        <button onclick="nav('guides')" class="px-5 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 border border-slate-300 text-slate-950 font-extrabold text-xs sm:text-sm transition">Read Consumer Lending Guides</button>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-5 border-t border-slate-200 text-xs">
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200"><div class="text-slate-500 font-extrabold uppercase">COMPLIANCE STANDARD</div><div class="text-slate-950 font-extrabold text-sm mt-0.5">US TILA Reg Z & UK FCA</div></div>
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200"><div class="text-slate-500 font-extrabold uppercase">DATA ARCHITECTURE</div><div class="text-slate-950 font-extrabold text-sm mt-0.5">100% Client-Side Zero-PII</div></div>
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200"><div class="text-slate-500 font-extrabold uppercase">UNDERWRITING MODELS</div><div class="text-slate-950 font-extrabold text-sm mt-0.5">FICO® 8 & Experian UK</div></div>
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200"><div class="text-slate-500 font-extrabold uppercase">ACTIVE CURRENCY MODE</div><div id="regBadge" class="text-emerald-700 font-extrabold text-sm mt-0.5">United States ($ USD)</div></div>
+      </div>
+    </div>
+
+    <!-- 5 Core Financial Calculators + In-Feed Native Ad Grid -->
+    <div class="space-y-5">
+      <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xs">
+        <div class="space-y-1.5">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-700">Interactive Actuarial Suite • Verified Client-Side Execution</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950">5 Core High-Precision Financial Calculators</h2>
+          <p class="text-xs sm:text-sm font-bold text-slate-700 max-w-3xl">Every calculator below utilizes standard institutional banking equations to deliver transparent, real-time schedules, credit underwriting simulations, and actionable consumer savings breakdowns.</p>
+        </div>
+        <div class="flex flex-col sm:items-end gap-1 shrink-0">
+          <span class="px-3.5 py-2 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-950 font-extrabold text-xs">✓ Audited Mathematical Precision</span>
+          <span class="text-[11px] font-bold text-slate-600">Instant In-Browser Calculation</span>
+        </div>
+      </div>
+      <div id="homeGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+
+    <!-- DEDICATED MULTI-CARD NATIVE AD WIDGET BLOCK (HIGH-CTR IN-FEED NATIVE AD) -->
+    <div class="native-ad rounded-3xl p-6 space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-2 border-b border-emerald-200 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded bg-emerald-700 text-white text-[10px] font-extrabold uppercase tracking-wider">Sponsored Native Feed</span>
+          <span class="text-xs font-extrabold text-slate-900">Recommended Tier-1 Financial Partner Offers (US & UK)</span>
+        </div>
+        <span class="text-[11px] font-extrabold text-emerald-800">Native Ad Widget Slot #2 (Adsterra Native / AdSense In-Article)</span>
+      </div>
+      <!-- PASTE YOUR NATIVE AD WIDGET SCRIPT BELOW THIS LINE -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="bg-white rounded-2xl p-4 border border-emerald-200 flex flex-col justify-between space-y-3">
+          <div>
+            <span class="text-[10px] font-extrabold uppercase text-emerald-700">High-Yield Cash Account</span>
+            <h3 class="text-sm font-extrabold text-slate-950 mt-0.5">Earn 5.15% APY / AER on Liquid Savings — $0 Monthly Fees</h3>
+            <p class="text-xs font-bold text-slate-600 mt-1">FDIC (US) & FSCS (UK) insured institutional deposit accounts with same-day wire transfers.</p>
+          </div>
+          <button onclick="nav('mortgage')" class="w-full py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs">Compare APY Rates →</button>
+        </div>
+        <div class="bg-white rounded-2xl p-4 border border-emerald-200 flex flex-col justify-between space-y-3">
+          <div>
+            <span class="text-[10px] font-extrabold uppercase text-emerald-700">Debt Consolidation Loan</span>
+            <h3 class="text-sm font-extrabold text-slate-950 mt-0.5">Pay Off 24% Credit Cards with a 7.99% Fixed Personal Loan</h3>
+            <p class="text-xs font-bold text-slate-600 mt-1">Check your fixed monthly installment in 60 seconds with zero impact to your credit score.</p>
+          </div>
+          <button onclick="nav('debt')" class="w-full py-2 rounded-lg bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-xs">Calculate Loan Savings →</button>
+        </div>
+        <div class="bg-white rounded-2xl p-4 border border-emerald-200 flex flex-col justify-between space-y-3">
+          <div>
+            <span class="text-[10px] font-extrabold uppercase text-emerald-700">Credit Score Boost</span>
+            <h3 class="text-sm font-extrabold text-slate-950 mt-0.5">Free FICO® 8 & Experian Credit Monitoring + Instant Alerts</h3>
+            <p class="text-xs font-bold text-slate-600 mt-1">Track your 30% credit utilization ratio and unlock prime Tier-1 mortgage interest rates.</p>
+          </div>
+          <button onclick="nav('fico')" class="w-full py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs">Simulate Credit Score →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consumer Trust, Reliability & Institutional Methodology Section -->
+    <div class="card sm:p-8 space-y-6 bg-white">
+      <div class="border-b border-slate-200 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <span class="text-xs font-extrabold uppercase text-emerald-700">Institutional Reliability & Verification Standards</span>
+          <h2 class="text-2xl font-extrabold text-slate-950 mt-1">Why Households & Financial Analysts Trust Aura Finance</h2>
+        </div>
+        <span class="text-xs font-extrabold text-slate-600">Zero Lead-Form Harvesting • Pure Actuarial Math</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <div class="text-emerald-700 font-extrabold text-base">01. Exact Statutory Formulas</div>
+          <p class="font-bold text-slate-800 leading-relaxed">
+            Unlike commercial lead-generation funnels that obscure lender origination fees, our calculators apply the exact closed-form annuity and periodic interest equations mandated by the US Truth in Lending Act (Regulation Z) and the UK Financial Conduct Authority (FCA CONC).
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <div class="text-emerald-700 font-extrabold text-base">02. Zero-PII Browser Security</div>
+          <p class="font-bold text-slate-800 leading-relaxed">
+            Your income, mortgage balance, credit utilization ratio, and debt figures never leave your device. Every simulation executes inside your local browser memory without requiring Social Security Numbers, National Insurance Numbers, or phone verification.
+          </p>
+        </div>
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+          <div class="text-emerald-700 font-extrabold text-base">03. Dual-Region US ($) & UK (£) Logic</div>
+          <p class="font-bold text-slate-800 leading-relaxed">
+            Seamless switching between United States ($ USD) and United Kingdom (£ GBP) conventions allows borrowers to evaluate 15/30-year US fixed mortgages alongside 25-year UK repayment terms and localized 0% balance transfer cards.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comprehensive YMYL Editorial Guides Preview on Home Page -->
+    <div class="space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between border-b border-slate-200 pb-4 gap-2">
+        <div>
+          <span class="text-xs font-extrabold uppercase text-emerald-700">YMYL Consumer Education & Editorial Authority</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950">In-Depth Financial Guides & Consumer Lending Research</h2>
+        </div>
+        <button onclick="nav('guides')" class="text-xs sm:text-sm font-extrabold text-emerald-700 hover:text-emerald-800 underline">Open Complete 6-Chapter YMYL Guide Library →</button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <article class="card space-y-3">
+          <span class="text-xs font-extrabold text-emerald-700 uppercase">Editorial Guide 01 • Mortgage & Auto Amortization</span>
+          <h3 class="text-xl font-extrabold text-slate-950">How Front-Loaded Mortgage Amortization Impacts Early Principal Equity</h3>
+          <p class="text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
+            When borrowers execute a fixed-rate mortgage or auto loan contract, the total monthly Principal and Interest (P&I) payment remains constant, yet the internal ratio between interest expense and principal reduction shifts every billing cycle. Because monthly interest is calculated on the outstanding principal balance ($I_t = B_{t-1} \times \frac{\text{APR}}{12}$), early payments in a 25- or 30-year mortgage dedicate up to 75% of every dollar toward interest charges.
+          </p>
+          <p class="text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
+            By applying even modest recurring principal curtailments during the first five years of amortization, households bypass the steepest portion of the interest curve, shortening total loan duration by 4 to 7 years.
+          </p>
+          <button onclick="nav('guides')" class="text-xs font-extrabold text-emerald-700 underline">Read Complete Amortization Chapter →</button>
+        </article>
+
+        <article class="card space-y-3">
+          <span class="text-xs font-extrabold text-emerald-700 uppercase">Editorial Guide 02 • Revolving Debt Restructuring</span>
+          <h3 class="text-xl font-extrabold text-slate-950">Mathematical Comparison: 24% Revolving Credit Cards vs Fixed Consolidation Loans</h3>
+          <p class="text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
+            Commercial credit cards compound interest daily using the Average Daily Balance (ADB) method. When central bank benchmark rates rise, variable credit card APRs routinely reach 22.99% to 28.99%. Paying only the minimum monthly requirement (typically 1% of principal plus accrued interest and fees) keeps borrowers trapped in revolving debt for over 20 years.
+          </p>
+          <p class="text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
+            Refinancing revolving credit card balances into a fixed-rate personal installment loan or a 0% introductory APR balance transfer card immediately halts daily compounding and converts open-ended revolving utilization into a structured installment tradeline—often boosting FICO® and Experian scores by 35 to 60 points.
+          </p>
+          <button onclick="nav('guides')" class="text-xs font-extrabold text-emerald-700 underline">Read Complete Debt Restructuring Chapter →</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 2: TOOL 1 - MORTGAGE & AUTO LOAN APR CALCULATOR                  -->
+  <!-- ===================================================================== -->
+  <section id="v-mortgage" class="hidden space-y-6">
+    <div class="card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="space-y-1">
+        <span class="text-xs font-extrabold uppercase text-emerald-700">Interactive Engine 01 • TILA & FCA Actuarial Schedule</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-950">Mortgage & Auto Loan APR Calculator</h1>
+        <p class="text-xs sm:text-sm font-bold text-slate-700">Model exact monthly Principal & Interest (P&I) obligations, credit-tier rate impacts, and full annual amortization tables.</p>
+      </div>
+      <button onclick="nav('home')" class="self-start sm:self-auto px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 font-extrabold text-xs">✕ Back to Dashboard</button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-5 card space-y-4">
+        <h2 class="text-base font-extrabold text-slate-950 border-b pb-2">Enter Loan & Credit Parameters</h2>
+        <div><label class="text-xs font-extrabold">Loan Principal Amount (<span class="cur">$</span>)</label><input id="mP" type="number" value="320000" oninput="calcM(false)" class="inp"></div>
+        <div><label class="text-xs font-extrabold">Applicant Credit Score Tier</label>
+          <select onchange="document.getElementById('mA').value=this.value;calcM(false)" class="inp text-sm">
+            <option value="5.75">Excellent Credit (740–850) — Est. 5.75% APR</option>
+            <option value="6.45" selected>Good Credit (680–739) — Est. 6.45% APR</option>
+            <option value="7.85">Fair Credit (620–679) — Est. 7.85% APR</option>
+            <option value="9.95">Rebuilding Credit (&lt;620) — Est. 9.95% APR</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div><label class="text-xs font-extrabold">Annual APR (%)</label><input id="mA" type="number" step="0.05" value="6.45" oninput="calcM(false)" class="inp"></div>
+          <div><label class="text-xs font-extrabold">Amortization Term</label>
+            <select id="mT" onchange="calcM(false)" class="inp">
+              <option value="3">3 Years (Auto)</option>
+              <option value="5">5 Years (Auto)</option>
+              <option value="15">15 Years (Mortgage)</option>
+              <option value="25">25 Years (UK/US)</option>
+              <option value="30" selected>30 Years (Mortgage)</option>
+            </select>
+          </div>
+        </div>
+        <button onclick="calcM(true)" class="btn-p">Calculate & Generate Official Schedule →</button>
+      </div>
+
+      <div class="lg:col-span-7 card space-y-5">
+        <div class="flex flex-wrap justify-between items-center border-b pb-4 gap-4">
+          <div><span class="text-xs font-extrabold text-slate-500 uppercase">ESTIMATED MONTHLY P&I PAYMENT</span><p id="mOut" class="text-3xl sm:text-4xl font-extrabold text-emerald-700 mt-0.5">$2,012.09</p></div>
+          <div class="text-right"><span class="text-xs font-extrabold text-slate-500 uppercase">CUMULATIVE INTEREST</span><p id="mIntOut" class="text-xl sm:text-2xl font-extrabold text-amber-700 mt-0.5">$404,352</p></div>
+        </div>
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs font-extrabold"><span id="mPPct">Principal Ratio: 44%</span><span id="mIPct">Interest Ratio: 56%</span></div>
+          <div class="w-full h-4 rounded-full bg-amber-500 overflow-hidden"><div id="mBar" class="h-full bg-emerald-600" style="width:44%"></div></div>
+        </div>
+        <!-- In-Tool 300x250 / 336x280 Banner Ad -->
+        <div class="ad-box rounded-xl p-3.5 text-center space-y-1">
+          <span class="text-[10px] font-extrabold uppercase text-slate-500 block">In-Tool Rectangle Banner Ad (300×250 / 336×280)</span>
+          <p class="text-xs font-extrabold text-slate-950">Compare Verified Tier-1 Mortgage & Auto Lenders — Instant Rate Quote</p>
+        </div>
+        <div class="max-h-60 overflow-y-auto border border-slate-200 rounded-xl">
+          <table class="w-full text-left text-xs font-extrabold">
+            <thead class="bg-slate-100 sticky top-0 border-b border-slate-300"><tr><th class="p-2.5">Year</th><th class="p-2.5">Principal Paid</th><th class="p-2.5">Interest Paid</th><th class="p-2.5">Ending Balance</th></tr></thead>
+            <tbody id="mTbl" class="divide-y divide-slate-200"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card space-y-2 bg-slate-50">
+      <h3 class="text-base font-extrabold text-slate-950">Actuarial Methodology & Borrower Guidance</h3>
+      <p class="text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">
+        This engine computes fixed monthly installments using the standard annuity formula $M = P \frac{r(1+r)^n}{(1+r)^n - 1}$, where $P$ is principal, $r$ is monthly periodic rate ($\text{APR}/12$), and $n$ is total monthly payments. Property taxes, homeowners insurance, and Private Mortgage Insurance (PMI) are excluded to isolate pure debt-service cost.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 3: TOOL 2 - CREDIT CARD DEBT CONSOLIDATION PLANNER               -->
+  <!-- ===================================================================== -->
+  <section id="v-debt" class="hidden space-y-6">
+    <div class="card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="space-y-1">
+        <span class="text-xs font-extrabold uppercase text-emerald-700">Interactive Engine 02 • Debt Restructuring & Interest Audit</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-950">Credit Card Debt Consolidation Planner</h1>
+        <p class="text-xs sm:text-sm font-bold text-slate-700">Quantify exact monthly cashflow savings and total interest eliminated when refinancing high-APR credit cards into a fixed personal loan.</p>
+      </div>
+      <button onclick="nav('home')" class="self-start sm:self-auto px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 font-extrabold text-xs">✕ Back to Dashboard</button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-5 card space-y-4">
+        <h2 class="text-base font-extrabold text-slate-950 border-b pb-2">Revolving Debt vs Consolidation Loan</h2>
+        <div><label class="text-xs font-extrabold">Total Credit Card Balance (<span class="cur">$</span>)</label><input id="dB" type="number" value="18500" oninput="calcD(false)" class="inp"></div>
+        <div class="grid grid-cols-2 gap-3">
+          <div><label class="text-xs font-extrabold">Current Card APR (%)</label><input id="dCA" type="number" value="23.99" oninput="calcD(false)" class="inp"></div>
+          <div><label class="text-xs font-extrabold">New Fixed Loan APR (%)</label><input id="dLA" type="number" value="9.49" oninput="calcD(false)" class="inp"></div>
+        </div>
+        <div><label class="text-xs font-extrabold">Consolidation Payoff Term (Months)</label><input id="dM" type="number" value="36" oninput="calcD(false)" class="inp"></div>
+        <button onclick="calcD(true)" class="btn-p">Generate Debt Consolidation Report →</button>
+      </div>
+
+      <div class="lg:col-span-7 card space-y-5">
+        <div class="bg-emerald-50 border-2 border-emerald-300 rounded-2xl p-5">
+          <span class="text-xs font-extrabold uppercase text-emerald-900">Total Projected Interest Savings</span>
+          <p id="dSave" class="text-3xl sm:text-4xl font-extrabold text-emerald-700 mt-1">$4,791.09</p>
+          <p id="dSubTxt" class="text-xs font-bold text-slate-800 mt-1.5">By restructuring revolving credit card debt into a fixed-rate installment loan over 36 months.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm font-extrabold">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5">
+            <div class="text-rose-700 uppercase text-xs">Current Revolving Cards</div>
+            <div>Monthly Payment: <span id="dCM" class="text-slate-950"></span></div>
+            <div>Total Interest Paid: <span id="dCI" class="text-rose-700"></span></div>
+          </div>
+          <div class="p-4 rounded-xl bg-emerald-50/60 border border-emerald-300 space-y-1.5">
+            <div class="text-emerald-800 uppercase text-xs">Fixed Consolidation Loan</div>
+            <div>Monthly Payment: <span id="dLM" class="text-slate-950"></span></div>
+            <div>Total Interest Paid: <span id="dLI" class="text-emerald-700"></span></div>
+          </div>
+        </div>
+        <div class="ad-box rounded-xl p-3.5 text-center space-y-1">
+          <span class="text-[10px] font-extrabold uppercase text-slate-500 block">In-Tool Rectangle Banner Ad (300×250)</span>
+          <p class="text-xs font-extrabold text-slate-950">Check Fixed-Rate Debt Consolidation Loan Eligibility (0% Impact to Credit Score)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 4: TOOL 3 - MORTGAGE REFINANCE & HELOC BREAK-EVEN ENGINE         -->
+  <!-- ===================================================================== -->
+  <section id="v-refi" class="hidden space-y-6">
+    <div class="card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="space-y-1">
+        <span class="text-xs font-extrabold uppercase text-emerald-700">Interactive Engine 03 • Closing Cost Recovery Analysis</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-950">Mortgage Refinance & HELOC Break-Even Calculator</h1>
+        <p class="text-xs sm:text-sm font-bold text-slate-700">Determine the exact number of months required for monthly interest rate savings to amortize upfront closing and origination fees.</p>
+      </div>
+      <button onclick="nav('home')" class="self-start sm:self-auto px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 font-extrabold text-xs">✕ Back to Dashboard</button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-5 card space-y-4">
+        <h2 class="text-base font-extrabold text-slate-950 border-b pb-2">Refinance Parameters</h2>
+        <div><label class="text-xs font-extrabold">Remaining Mortgage Balance (<span class="cur">$</span>)</label><input id="rB" type="number" value="285000" oninput="calcR(false)" class="inp"></div>
+        <div class="grid grid-cols-2 gap-3">
+          <div><label class="text-xs font-extrabold">Current APR (%)</label><input id="rOA" type="number" value="7.25" oninput="calcR(false)" class="inp"></div>
+          <div><label class="text-xs font-extrabold">New Refi APR (%)</label><input id="rNA" type="number" value="5.85" oninput="calcR(false)" class="inp"></div>
+        </div>
+        <div><label class="text-xs font-extrabold">Total Closing & Origination Costs (<span class="cur">$</span>)</label><input id="rC" type="number" value="4200" oninput="calcR(false)" class="inp"></div>
+        <button onclick="calcR(true)" class="btn-p">Calculate Break-Even Horizon →</button>
+      </div>
+
+      <div class="lg:col-span-7 card space-y-5">
+        <div class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-6">
+          <span class="text-xs font-extrabold uppercase text-emerald-700">Closing Cost Break-Even Timeline</span>
+          <p id="rMos" class="text-3xl sm:text-4xl font-extrabold text-slate-950 mt-1">16.8 Months</p>
+          <p id="rTxt" class="text-xs sm:text-sm font-extrabold text-slate-700 mt-2"></p>
+        </div>
+        <div class="grid grid-cols-3 gap-3 text-xs font-extrabold">
+          <div class="p-3.5 rounded-xl bg-slate-50 border"><div>Current P&I</div><div id="rOldM" class="text-base text-slate-950 mt-1"></div></div>
+          <div class="p-3.5 rounded-xl bg-slate-50 border"><div>New Refi P&I</div><div id="rNewM" class="text-base text-emerald-700 mt-1"></div></div>
+          <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-300"><div>Monthly Savings</div><div id="rSavM" class="text-base text-emerald-700 mt-1"></div></div>
+        </div>
+        <div class="ad-box rounded-xl p-3.5 text-center space-y-1">
+          <span class="text-[10px] font-extrabold uppercase text-slate-500 block">In-Tool Rectangle Banner Ad (300×250)</span>
+          <p class="text-xs font-extrabold text-slate-950">Lock In Today's Fixed Refinance & HELOC Rates</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 5: TOOL 4 - FICO / EXPERIAN CREDIT SIMULATOR (WITH REPORT GEN)   -->
+  <!-- ===================================================================== -->
+  <section id="v-fico" class="hidden space-y-6">
+    <div class="card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="space-y-1">
+        <span class="text-xs font-extrabold uppercase text-emerald-700">Interactive Engine 04 • Algorithmic Credit Underwriting Model</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-950">FICO® 8 & Experian Credit Score Simulator</h1>
+        <p class="text-xs sm:text-sm font-bold text-slate-700">Adjust the 4 bureau scoring pillars below and click Generate Underwriting Report to unlock your personalized loan APR qualification table.</p>
+      </div>
+      <button onclick="nav('home')" class="self-start sm:self-auto px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 font-extrabold text-xs">✕ Back to Dashboard</button>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-6 card space-y-5 font-extrabold text-sm">
+        <h2 class="text-base font-extrabold text-slate-950 border-b pb-2">Adjust Bureau Scoring Factors</h2>
+        <div><div class="flex justify-between"><span>1. Revolving Credit Utilization (30% Weight)</span><span id="fUV" class="text-emerald-700">12%</span></div><input id="fU" type="range" min="1" max="95" value="12" oninput="calcF(false)"></div>
+        <div><div class="flex justify-between"><span>2. On-Time Payment History (35% Weight)</span><span id="fPV" class="text-emerald-700">99%</span></div><input id="fP" type="range" min="70" max="100" value="99" oninput="calcF(false)"></div>
+        <div><div class="flex justify-between"><span>3. Hard Inquiries in Last 12 Mos (10% Weight)</span><span id="fIV" class="text-emerald-700">1</span></div><input id="fI" type="range" min="0" max="10" value="1" oninput="calcF(false)"></div>
+        <div><div class="flex justify-between"><span>4. Average Credit Account Age (15% Weight)</span><span id="fAV" class="text-emerald-700">7 Yrs</span></div><input id="fA" type="range" min="1" max="25" value="7" oninput="calcF(false)"></div>
+        <button onclick="calcF(true)" class="btn-p">Generate Full Credit Underwriting Report →</button>
+      </div>
+
+      <div class="lg:col-span-6 card flex flex-col justify-between space-y-5">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-2">
+          <span class="text-xs font-extrabold uppercase text-slate-500">Simulated FICO® 8 / Experian Score</span>
+          <p id="fOut" class="text-6xl font-extrabold text-emerald-600">768</p>
+          <span id="fBadge" class="inline-block px-4 py-1 rounded-full bg-emerald-100 text-emerald-950 font-extrabold text-xs">Exceptional / Prime Tier-1 Borrower</span>
+        </div>
+        <div id="fReportBox" class="p-4 rounded-xl bg-emerald-50/70 border border-emerald-300 space-y-2 text-xs font-bold text-slate-900">
+          <div class="font-extrabold text-emerald-900 uppercase">Instant Underwriting Assessment & Rate Impact:</div>
+          <p id="fReportTxt"></p>
+          <div id="fRateGrid" class="grid grid-cols-3 gap-2 pt-2 text-[11px] font-extrabold"></div>
+        </div>
+        <div class="ad-box rounded-xl p-3 text-center space-y-1">
+          <span class="text-[10px] font-extrabold uppercase text-slate-500 block">In-Tool Rectangle Banner Ad (300×250)</span>
+          <p class="text-xs font-extrabold text-slate-950">Free Bureau Credit Monitoring & Instant Score Alerts</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 6: TOOL 5 - 0% INTRO APR CARD MATCHER & TRANSFER CALCULATOR      -->
+  <!-- ===================================================================== -->
+  <section id="v-cards" class="hidden space-y-6">
+    <div class="card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="space-y-1">
+        <span class="text-xs font-extrabold uppercase text-emerald-700">Interactive Engine 05 • Balance Transfer Savings & Card Matcher</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-950">0% Intro APR Balance Transfer Card Matcher</h1>
+        <p class="text-xs sm:text-sm font-bold text-slate-700">Enter your transfer balance, select your credit tier, and click Apply & Generate Savings Report on any card to view your net fee-adjusted savings.</p>
+      </div>
+      <button onclick="nav('home')" class="self-start sm:self-auto px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 font-extrabold text-xs">✕ Back to Dashboard</button>
+    </div>
+
+    <!-- Interactive Balance Transfer Input & Credit Tier Filter Bar -->
+    <div class="card grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+      <div class="md:col-span-5">
+        <label class="text-xs font-extrabold text-slate-900">Balance Amount to Transfer (<span class="cur">$</span>)</label>
+        <input id="cTransAmt" type="number" value="8500" oninput="renderCards()" class="inp">
+      </div>
+      <div class="md:col-span-7 space-y-1.5">
+        <span class="text-xs font-extrabold text-slate-900 block">Select Your Credit Score Tier:</span>
+        <div class="grid grid-cols-2 gap-2.5 bg-slate-100 p-1.5 rounded-xl border border-slate-300">
+          <button id="btnEx" onclick="setTier('excellent')" class="py-2.5 px-3 rounded-lg font-extrabold text-xs bg-emerald-600 text-white shadow-xs transition">Excellent Credit (720+)</button>
+          <button id="btnGd" onclick="setTier('good')" class="py-2.5 px-3 rounded-lg font-extrabold text-xs text-slate-800 hover:bg-white transition">Good Credit (660–719)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Generated Card Pre-Qualification Result Banner -->
+    <div id="cardResultBanner" class="hidden card border-2 border-emerald-500 bg-emerald-50/80 space-y-2">
+      <div class="flex items-center justify-between">
+        <span class="text-xs font-extrabold uppercase text-emerald-900">✓ Balance Transfer Pre-Qualification & Net Savings Breakdown</span>
+        <button onclick="document.getElementById('cardResultBanner').classList.add('hidden')" class="text-xs font-extrabold text-slate-700">✕ Dismiss</button>
+      </div>
+      <p id="cardResultTitle" class="text-lg font-extrabold text-slate-950"></p>
+      <p id="cardResultDetails" class="text-xs sm:text-sm font-bold text-slate-900 leading-relaxed"></p>
+    </div>
+
+    <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 7: EXHAUSTIVE 6-CHAPTER YMYL FINANCIAL GUIDES HUB (ADSENSE READY)-->
+  <!-- ===================================================================== -->
+  <section id="v-guides" class="hidden space-y-6">
+    <div class="card flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <span class="text-xs font-extrabold uppercase text-emerald-700">YMYL Consumer Reference Library • 6 Complete Chapters</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-950">Institutional Financial Guides & Regulatory Research</h1>
+        <p class="text-xs sm:text-sm font-bold text-slate-700 mt-1">Comprehensive consumer lending documentation aligned with US TILA Regulation Z and UK FCA rules.</p>
+      </div>
+      <button onclick="nav('home')" class="self-start sm:self-auto px-4 py-2.5 rounded-xl bg-slate-100 font-extrabold text-xs">✕ Back to Dashboard</button>
+    </div>
+
+    <div class="card sm:p-10 space-y-9 text-sm sm:text-base font-bold text-slate-800 leading-relaxed">
+      <article class="space-y-3 border-b border-slate-200 pb-8">
+        <span class="text-xs font-extrabold text-emerald-700 uppercase">Chapter 01 • US TILA Regulation Z & UK FCA Standards</span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-950">Understanding Nominal Interest Rates vs. Annual Percentage Rate (APR)</h2>
+        <p>
+          Across both United States and United Kingdom consumer credit markets, borrowers frequently confuse the nominal note rate with the Annual Percentage Rate (APR). The nominal interest rate represents strictly the periodic percentage charge applied to the outstanding principal loan balance. However, institutional mortgage lenders, auto finance companies, and personal loan originators routinely assess upfront origination charges, underwriting fees, discount points, and mortgage arrangement fees.
+        </p>
+        <p>
+          Under the US Truth in Lending Act (12 CFR Part 1026 - Regulation Z) and the UK Financial Conduct Authority (FCA CONC) rules, lenders must amortize mandatory upfront finance charges over the contractual life of the loan to express the true annualized cost of borrowing as the APR. When comparing two mortgage or auto loan offers with identical base interest rates, the loan exhibiting a narrower spread between its nominal rate and its APR contains significantly lower front-loaded lender fees.
+        </p>
+      </article>
+
+      <article class="space-y-3 border-b border-slate-200 pb-8">
+        <span class="text-xs font-extrabold text-emerald-700 uppercase">Chapter 02 • Actuarial Amortization & Principal Curtailment</span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-950">How Early Principal Curtailments Compress 30-Year Amortization Horizons</h2>
+        <p>
+          Standard residential mortgages and auto loans utilize level-payment amortization. While your contractual monthly Principal and Interest (P&I) installment remains fixed, the internal interest portion is recalculated monthly based on the remaining principal balance ($I_t = B_{t-1} \times \frac{r}{12}$). On a $320,000 mortgage at 6.45% APR over 30 years, first-year payments allocate $20,516 toward interest and only $3,629 toward principal equity.
+        </p>
+        <p>
+          When a borrower submits an extra principal curtailment alongside their regular installment, 100% of that supplemental payment deducts directly from $B_{t-1}$. Consequently, every subsequent billing cycle calculates interest on a permanently smaller principal base, creating an exponential interest-reduction effect that can eliminate 5 to 8 years of mortgage payments.
+        </p>
+      </article>
+
+      <article class="space-y-3 border-b border-slate-200 pb-8">
+        <span class="text-xs font-extrabold text-emerald-700 uppercase">Chapter 03 • Revolving Credit Card Compounding & 0% Transfers</span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-950">Executing a 0% Intro APR Balance Transfer Without Retroactive Interest Traps</h2>
+        <p>
+          Unlike retail store financing promotions that charge "deferred interest" retroactively from the original purchase date if a single dollar remains unpaid at expiration, Tier-1 bank balance transfer credit cards offer true 0% introductory APR periods lasting 12 to 29 months. In exchange for a one-time balance transfer fee (typically 3% to 5% of the transferred balance), periodic interest is completely waived during the promotional window.
+        </p>
+        <p>
+          To maximize net savings, borrowers should divide the total transferred debt (plus the upfront transfer fee) by the exact number of promotional months and automate fixed monthly installments, while refraining from putting new retail purchases on the balance transfer card until the transferred principal reaches zero.
+        </p>
+      </article>
+
+      <article class="space-y-3 border-b border-slate-200 pb-8">
+        <span class="text-xs font-extrabold text-emerald-700 uppercase">Chapter 04 • Credit Bureau Algorithms (FICO® 8 & Experian)</span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-950">Optimizing Credit Utilization & Statement Closing Dates Before Mortgage Underwriting</h2>
+        <p>
+          Both the US FICO® Score 8 model (300–850 scale) and the UK Experian credit scoring system (0–999 scale) weight Payment History (35%) and Revolving Credit Utilization (30%) as the two dominant drivers of consumer creditworthiness. Because card issuers report your balance to Equifax, Experian, and TransUnion on your monthly <em>statement closing date</em> rather than your payment due date, paying down revolving card balances 48 hours prior to statement generation ensures a 1% to 9% utilization ratio is recorded on your credit file—unlocking prime Tier-1 lending rates.
+        </p>
+      </article>
+
+      <article class="space-y-3 border-b border-slate-200 pb-8">
+        <span class="text-xs font-extrabold text-emerald-700 uppercase">Chapter 05 • Refinance Break-Even & Closing Cost Recovery</span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-950">Calculating Net Present Value When Refinancing a Fixed Mortgage</h2>
+        <p>
+          Refinancing a mortgage into a lower interest rate reduces your monthly P&I outlay, but requires upfront closing costs including appraisal fees, title insurance, solicitor/conveyancing fees, and lender origination points (typically 1.5% to 3% of loan principal). The break-even horizon is computed by dividing total closing costs by the monthly interest savings ($\text{Break-Even Months} = \frac{\text{Closing Costs}}{\text{Monthly Savings}}$). Households planning to sell or relocate prior to reaching their break-even month should avoid paying upfront discount points.
+        </p>
+      </article>
+
+      <article class="space-y-3">
+        <span class="text-xs font-extrabold text-emerald-700 uppercase">Chapter 06 • Debt-to-Income (DTI) Underwriting Thresholds</span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-950">How Institutional Underwriters Audit Front-End and Back-End DTI Ratios</h2>
+        <p>
+          Alongside credit bureau scores, mortgage and personal loan underwriters evaluate your Debt-to-Income (DTI) ratio, calculated by dividing total recurring monthly debt obligations by gross monthly household income. Conventional US Qualified Mortgages (QM) generally require a back-end DTI ratio below 43% (and ideally below 36%), while UK FCA affordability assessments stress-test household cashflow against potential future Bank of England base rate increases. Consolidating high-interest credit card minimums into a single lower-payment installment loan directly improves your back-end DTI ratio prior to mortgage application.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 8: ABOUT US (FOUNDER NAVEED ALI EXCLUSIVELY HERE)                -->
+  <!-- ===================================================================== -->
+  <section id="v-about" class="hidden card sm:p-10 space-y-8">
+    <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+      <div>
+        <span class="text-xs font-extrabold uppercase text-emerald-700">Corporate Profile & Institutional Vision</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-950">About Aura Finance</h1>
+      </div>
+      <button onclick="nav('home')" class="px-4 py-2 rounded-xl bg-slate-100 font-extrabold text-xs">✕ Back to Dashboard</button>
+    </div>
+
+    <div class="space-y-4 text-sm sm:text-base font-bold text-slate-800 leading-relaxed">
+      <h2 class="text-xl font-extrabold text-slate-950">1. Platform Mission & Institutional Financial Engineering</h2>
+      <p>
+        Aura Finance is an institutional-grade financial technology and consumer credit education portal engineered specifically for households, borrowers, and financial analysts across the United States ($ USD) and the United Kingdom (£ GBP). Our core mission is to democratize actuarial lending mathematics—providing everyday consumers with the exact amortization, debt restructuring, refinance break-even, and credit scoring models used by commercial bank underwriting desks.
+      </p>
+      <p>
+        In an online ecosystem crowded with lead-harvesting forms that demand sensitive personal data before displaying basic loan numbers, Aura Finance stands apart through our strict <strong>100% Client-Side Zero-PII Architecture</strong>. Every calculation on our platform executes locally inside your browser without storing, tracking, or transmitting your financial inputs to external servers.
+      </p>
+      <h2 class="text-xl font-extrabold text-slate-950 pt-2">2. Editorial Integrity & YMYL Verification</h2>
+      <p>
+        Because consumer lending and credit decisions directly impact household financial stability ("Your Money Or Your Life" — YMYL), every calculator formula and educational guide published on Aura Finance is audited against statutory formulas published by the US Consumer Financial Protection Bureau (CFPB / Truth in Lending Act Regulation Z) and the UK Financial Conduct Authority (FCA Handbook).
+      </p>
+    </div>
+
+    <div class="space-y-3 pt-2 border-t border-slate-200">
+      <h2 class="text-xl font-extrabold text-slate-950">3. Leadership & Systems Architecture</h2>
+      <div class="p-6 rounded-2xl bg-slate-50 border-2 border-slate-300 flex flex-col sm:flex-row sm:items-center gap-5">
+        <div class="w-16 h-16 rounded-full bg-emerald-100 border-2 border-emerald-600 flex items-center justify-center text-emerald-950 font-extrabold text-2xl shrink-0">NA</div>
+        <div class="space-y-1">
+          <p class="text-2xl font-extrabold text-slate-950">Naveed Ali</p>
+          <p class="text-sm sm:text-base font-extrabold text-emerald-800">Founder & Lead Architect — Aura Finance</p>
+          <p class="text-xs sm:text-sm font-bold text-slate-800 leading-relaxed pt-1">
+            Full-Stack FinTech Systems Architect specializing in deterministic client-side actuarial engines, US (TILA) and UK (FCA) compliant financial user interfaces, and high-availability web systems.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="space-y-3 pt-2 border-t border-slate-200">
+      <h2 class="text-xl font-extrabold text-slate-950">4. Official Contact & Executive Support Desk</h2>
+      <p class="text-sm font-bold text-slate-800">
+        For corporate inquiries, technical support, regulatory compliance verification, or advertising partnerships, please reach out directly to our official executive desk below:
+      </p>
+      <div class="p-5 rounded-2xl bg-emerald-50 border-2 border-emerald-400 flex flex-wrap items-center justify-between gap-4">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=naveedchandio109@gmail.com&su=Aura%20Finance%20Official%20Inquiry" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base font-extrabold text-slate-950 underline break-all">naveedchandio109@gmail.com</a>
+        <div class="flex flex-wrap gap-2.5">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=naveedchandio109@gmail.com&su=Aura%20Finance%20Official%20Inquiry" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs uppercase tracking-wider">Open Gmail ↗</a>
+          <a href="mailto:naveedchandio109@gmail.com" class="px-4 py-2.5 rounded-xl bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider">Launch Mail App</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 9: EXHAUSTIVE PRIVACY POLICY (GDPR, UK-GDPR, CCPA & ADSENSE)     -->
+  <!-- ===================================================================== -->
+  <section id="v-privacy" class="hidden card sm:p-10 space-y-6 text-sm sm:text-base font-bold text-slate-800 leading-relaxed">
+    <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+      <div>
+        <span class="text-xs font-extrabold uppercase text-emerald-700">Regulatory Data Protection Policy • 9 Comprehensive Sections</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-950">Privacy Policy (GDPR, UK-GDPR & CCPA/CPRA Compliant)</h1>
+      </div>
+      <button onclick="nav('home')" class="px-4 py-2 rounded-xl bg-slate-100 font-extrabold text-xs">✕ Back to Dashboard</button>
+    </div>
+
+    <p class="text-xs font-extrabold text-slate-600 uppercase">Effective Date: January 1, 2026 | Last Updated: October 2026 | Direct URL: #privacy</p>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">1. Executive Privacy Commitment & Zero-PII Architecture</h2>
+      <p>
+        Aura Finance ("we," "our," or "the Platform") is committed to protecting the privacy, confidentiality, and digital security of our visitors across the United States, the United Kingdom, the European Economic Area (EEA), and global jurisdictions. Unlike conventional financial lead-generation websites that harvest personal names, Social Security Numbers (SSN), National Insurance Numbers, residential addresses, or bank account credentials, Aura Finance is engineered from the ground up on a <strong>100% Client-Side Zero-PII (Personally Identifiable Information) Architecture</strong>.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">2. Local Browser Execution & Financial Input Non-Collection</h2>
+      <p>
+        All financial parameters entered into our Mortgage & Auto Loan APR Calculator, Credit Card Debt Consolidation Planner, Refinance Break-Even Engine, FICO® / Experian Credit Score Simulator, and 0% Intro APR Balance Transfer Matcher are processed exclusively inside your device's local web browser memory (RAM) via client-side JavaScript. We do not transmit, record, store, index, or sell your loan amounts, interest rates, income figures, or credit score simulations to any backend server or third-party data broker.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">3. Standard Web Server Log Files & Security Telemetry</h2>
+      <p>
+        Like all enterprise web portals hosted on global Content Delivery Networks (CDNs, including GitHub Pages infrastructure), our static hosting environment automatically records standard, non-identifying HTTP log files to maintain network security, diagnose technical errors, and prevent Distributed Denial of Service (DDoS) attacks. These logs may include anonymized Internet Protocol (IP) addresses, browser user-agent strings, referring/exit pages, operating system types, and timestamps. This telemetry is strictly segregated and is never linked to your interactive calculator inputs.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">4. Google AdSense, DoubleClick DART Cookies & Web Advertising Partners</h2>
+      <p>
+        Aura Finance utilizes third-party web advertising networks—including Google AdSense, Adsterra, Monetag, and verified institutional display partners—to fund free consumer access to our financial calculators and YMYL educational guides.
+      </p>
+      <ul class="list-disc pl-6 space-y-1.5">
+        <li>Third-party vendors, including Google, use cookies (such as the DoubleClick DART cookie) and web beacons to serve advertisements based on a user's prior visits to Aura Finance or other websites on the internet.</li>
+        <li>Google's use of advertising cookies enables it and its partners to serve relevant financial and commercial advertisements to users based on their visit to our site and/or other sites on the Internet.</li>
+        <li>Users may opt out of personalized advertising at any time by visiting <a href="https://adssettings.google.com" target="_blank" rel="noopener" class="text-emerald-700 underline">Google Ads Settings</a> or by visiting the Network Advertising Initiative opt-out portal at <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener" class="text-emerald-700 underline">www.aboutads.info</a>.</li>
+      </ul>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">5. Cookie Management & Browser Controls</h2>
+      <p>
+        You can choose to disable or selectively turn off our cookies or third-party advertising cookies in your web browser settings (such as Google Chrome, Apple Safari, Mozilla Firefox, or Microsoft Edge). Disabling advertising cookies will not restrict your ability to use any of the 5 core financial calculators on Aura Finance.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">6. UK-GDPR & European Union GDPR Data Protection Rights</h2>
+      <p>
+        If you reside in the United Kingdom or the European Economic Area (EEA), you are entitled to specific statutory rights under the UK General Data Protection Regulation (UK-GDPR) and the EU GDPR, including: (a) the right to access information regarding data processing; (b) the right to rectification of inaccurate data; (c) the right to erasure ("right to be forgotten"); (d) the right to restrict processing; (e) the right to data portability; and (f) the right to withdraw cookie consent at any time.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">7. California Consumer Privacy Act (CCPA / CPRA) Notice</h2>
+      <p>
+        Under the California Consumer Privacy Act (CCPA) as amended by the California Privacy Rights Act (CPRA), California residents have the statutory right to: (1) request disclosure of the categories and specific pieces of personal information collected; (2) request deletion of personal information; (3) opt out of the "sale" or "sharing" of personal information; and (4) non-discrimination for exercising CCPA rights. Aura Finance does not sell personal financial records to third parties.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">8. Children's Online Privacy Protection (COPPA Compliance)</h2>
+      <p>
+        Aura Finance's calculators, credit simulators, and lending guides are intended exclusively for adult consumers aged 18 and older. We do not knowingly collect any personal information from children under the age of 13 (or under 16 in the UK/EEA).
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">9. Privacy & Data Protection Contact Procedure</h2>
+      <p>
+        For any questions regarding this Privacy Policy, cookie compliance, or statutory GDPR/CCPA requests, please navigate to our <a href="#about" onclick="nav('about')" class="text-emerald-700 underline">About Us</a> page to reach our official compliance desk.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 10: EXHAUSTIVE TERMS & CONDITIONS OF USE                         -->
+  <!-- ===================================================================== -->
+  <section id="v-terms" class="hidden card sm:p-10 space-y-6 text-sm sm:text-base font-bold text-slate-800 leading-relaxed">
+    <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+      <div>
+        <span class="text-xs font-extrabold uppercase text-emerald-700">Institutional User Agreement • 7 Binding Sections</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-950">Terms & Conditions of Use</h1>
+      </div>
+      <button onclick="nav('home')" class="px-4 py-2 rounded-xl bg-slate-100 font-extrabold text-xs">✕ Back to Dashboard</button>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">1. Acceptance of Terms & Binding Agreement</h2>
+      <p>
+        By accessing, browsing, or utilizing any interactive financial calculator, credit score simulator, card comparison table, or editorial guide on Aura Finance, you acknowledge that you have read, understood, and agreed to be bound by these Terms & Conditions of Use and our Privacy Policy. If you do not agree with any provision herein, you must discontinue use of the Platform immediately.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">2. Strictly Educational & Informational Scope</h2>
+      <p>
+        All content, actuarial engines, amortization schedules, refinance break-even horizons, and credit score projections provided on Aura Finance are for <strong>informational, educational, and self-help modeling purposes only</strong>. Aura Finance is an independent financial publication and software platform; we are not a chartered bank, mortgage lender, credit union, credit reporting agency, or registered investment advisor in the United States or the United Kingdom.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">3. Accuracy of Actuarial Estimates & User Verification Responsibility</h2>
+      <p>
+        While our engineering team maintains rigorous mathematical accuracy aligned with US Truth in Lending Act (TILA) and UK Financial Conduct Authority (FCA) formulas, all calculator outputs remain estimates based on user-supplied inputs. Actual loan terms, monthly payments, closing costs, and credit card approvals are determined solely by licensed third-party financial institutions following formal underwriting verification of your credit report, debt-to-income (DTI) ratio, and collateral valuation.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">4. Intellectual Property Rights & Copyright Protection</h2>
+      <p>
+        All source code, JavaScript actuarial algorithms, custom animated geometric vector branding, user interface designs, and YMYL editorial guides are the exclusive intellectual property of Aura Finance (© 2026 Aura Finance. All rights reserved.). Users are granted a limited, non-exclusive, revocable license to use the calculators for personal, non-commercial financial planning. Automated scraping, iframe embedding, or commercial redistribution of our code or content without written authorization is strictly prohibited.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">5. Third-Party Links & External Financial Offers</h2>
+      <p>
+        Aura Finance may display advertisements or links to third-party financial institutions, mortgage brokers, or credit card issuers. We do not control or endorse the underwriting terms or privacy practices of external websites. Users should review the official Schumer Box (US) or FCA Summary Box (UK) on a lender's official website prior to submitting any formal credit application.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">6. Limitation of Liability & Warranty Disclaimer</h2>
+      <p>
+        Aura Finance provides all calculators and educational content on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied. Under no circumstances shall Aura Finance or its management be liable for any direct, indirect, incidental, or consequential financial damages arising from lending, refinancing, or credit decisions made by users in reliance upon our simulation tools.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">7. Modifications to Terms</h2>
+      <p>
+        We reserve the right to revise and update these Terms & Conditions at any time to reflect changes in US or UK financial regulations or platform features. Continued use of Aura Finance following any update constitutes acceptance of the revised terms.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- VIEW 11: EXHAUSTIVE FINANCIAL & APR DISCLAIMER                        -->
+  <!-- ===================================================================== -->
+  <section id="v-disclaimer" class="hidden card sm:p-10 space-y-6 text-sm sm:text-base font-bold text-slate-800 leading-relaxed">
+    <div class="flex justify-between items-center border-b border-slate-200 pb-4">
+      <div>
+        <span class="text-xs font-extrabold uppercase text-emerald-700">Mandatory YMYL Regulatory Disclosure • 5 Sections</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-950">Financial, APR & Trademark Disclaimer</h1>
+      </div>
+      <button onclick="nav('home')" class="px-4 py-2 rounded-xl bg-slate-100 font-extrabold text-xs">✕ Back to Dashboard</button>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">1. Non-Lender & Non-Broker Regulatory Notice</h2>
+      <p>
+        Aura Finance does not issue mortgages, originate auto loans, extend personal lines of credit, or issue credit cards. Nothing displayed on this website constitutes a binding offer of credit, a loan commitment, or formal financial, tax, or legal advice. Borrowers should always consult a licensed mortgage loan originator, Certified Public Accountant (CPA), or FCA-authorized independent financial advisor before executing binding credit agreements.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">2. Truth in Lending Act (TILA) & UK FCA Representative APR Disclosure</h2>
+      <p>
+        Interest rates, Annual Percentage Rates (APRs), balance transfer fees (3% to 5%), and promotional 0% intro APR durations (9 to 29 months) displayed across our tools and comparison tables represent illustrative market averages for United States ($ USD) and United Kingdom (£ GBP) credit tiers. In accordance with US TILA Regulation Z and UK FCA Consumer Credit (CONC) rules, your actual APR and credit limit will vary based on credit bureau underwriting, employment verification, and prevailing central bank benchmark rates (Federal Reserve / Bank of England).
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">3. Mortgage Escrow, Property Taxes & Insurance Exclusions</h2>
+      <p>
+        Monthly installment outputs generated by the Mortgage & Auto Loan APR Calculator reflect Principal and Interest (P&I) only. Residential mortgage borrowers in the US and UK must budget separately for local property taxes / council tax, hazard homeowners insurance, Private Mortgage Insurance (PMI), and HOA/leasehold service charges.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">4. Credit Score Simulation Approximations</h2>
+      <p>
+        The FICO® 8 & Experian Credit Score Simulator utilizes weighted educational approximations based on publicly disclosed credit bureau scoring pillars (35% payment history, 30% utilization, 15% credit age, 10% new credit, 10% credit mix). Simulated scores are educational estimates and may differ from proprietary scores pulled by lenders during formal underwriting.
+      </p>
+    </div>
+
+    <div class="space-y-2">
+      <h2 class="text-lg font-extrabold text-slate-950">5. Registered Trademarks & Non-Affiliation Notice</h2>
+      <p>
+        <strong>FICO®</strong> is a registered trademark of Fair Isaac Corporation in the United States and other countries. <strong>Experian®</strong> is a registered trademark of Experian Information Solutions, Inc. Aura Finance is an independent consumer education platform and is neither affiliated with, sponsored by, nor endorsed by Fair Isaac Corporation, Experian, Equifax, TransUnion, or any card issuer referenced for educational comparison.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- BOTTOM MULTIPLEX / BANNER AD SLOT (VISIBLE ON ALL PAGES)              -->
+  <!-- ===================================================================== -->
+  <div class="ad-box rounded-2xl p-5 text-center space-y-1.5">
+    <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 block">Bottom Website Display Banner Ad (728×90 / Multiplex Slot #3)</span>
+    <!-- PASTE YOUR FOOTER BANNER AD SCRIPT BELOW THIS LINE -->
+    <p class="text-sm font-extrabold text-slate-950">Compare 2026 Tier-1 US ($) & UK (£) Personal Consolidation Loans & 0% Balance Transfer Cards</p>
+    <p class="text-xs font-bold text-slate-600">Updated Daily • Soft Credit Check Pre-Qualification • Zero Upfront Application Fees</p>
+  </div>
+
+</main>
+
+<!-- CLEAN ENTERPRISE WEBSITE FOOTER (Founder Name/Email Strictly in About Us Only) -->
+<footer class="bg-white border-t border-slate-300 mt-10 py-8 px-4 text-xs font-extrabold text-slate-950">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p>© 2026 Aura Finance. All rights reserved.</p>
+    <div class="flex flex-wrap justify-center gap-5">
+      <a href="#home" onclick="nav('home')" class="hover:text-emerald-700">Dashboard</a>
+      <a href="#guides" onclick="nav('guides')" class="hover:text-emerald-700">YMYL Guides</a>
+      <a href="#about" onclick="nav('about')" class="hover:text-emerald-700">About Us</a>
+      <a href="#privacy" onclick="nav('privacy')" class="hover:text-emerald-700">Privacy Policy</a>
+      <a href="#terms" onclick="nav('terms')" class="hover:text-emerald-700">Terms & Conditions</a>
+      <a href="#disclaimer" onclick="nav('disclaimer')" class="hover:text-emerald-700">Financial Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+<!-- INTERSTITIAL AD & INSTITUTIONAL RESULT MODAL -->
+<div id="modal" class="fixed inset-0 bg-slate-950/75 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+  <div class="bg-white rounded-3xl border border-slate-300 max-w-md w-full p-6 space-y-4 shadow-2xl">
+    <div class="flex justify-between items-center border-b pb-3">
+      <span class="text-xs font-extrabold uppercase text-emerald-900 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">✓ Institutional Result & Ad Sponsor</span>
+      <button onclick="closeM()" class="font-extrabold text-slate-700 hover:text-slate-950">✕</button>
+    </div>
+    <div id="mBody" class="space-y-2"></div>
+    <div class="ad-box rounded-2xl p-4 text-center space-y-1">
+      <span class="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 block">Sponsored Website Interstitial Placement (Slot #4)</span>
+      <p class="text-xs font-extrabold text-slate-950">Check Pre-Qualified US & UK Rates — Soft Credit Pull (Zero Score Impact)</p>
+      <p class="text-[11px] font-bold text-slate-600">Instant Underwriting Match for Prime & Good Credit Borrowers</p>
+    </div>
+    <button onclick="closeM()" class="btn-p">View Complete Breakdown & Continue →</button>
+  </div>
+</div>
+
+<!-- PURE VANILLA JAVASCRIPT ENGINE WITH AUTOMATIC URL HASH ROUTING -->
+<script>
+let reg='US',sym='$',tier='excellent';
+const validViews=['home','mortgage','debt','refi','fico','cards','guides','about','privacy','terms','disclaimer'];
+const tools=[
+  {id:'mortgage',n:'01',badge:'TILA & FCA Verified',trust:'Standard Closed-Form Annuity Formula',t:'Mortgage & Auto Loan APR Calculator',d:'Calculate exact monthly Principal & Interest (P&I), inspect visual interest ratios, and generate a complete year-by-year amortization table.',b:'Launch APR Calculator'},
+  {id:'debt',n:'02',badge:'High-APR Relief',trust:'Daily ADB vs Fixed Installment Audit',t:'Credit Card Debt Consolidation Planner',d:'Compare revolving 22%+ APR credit card balances against a fixed-rate personal consolidation loan to quantify total interest saved.',b:'Launch Debt Planner'},
+  {id:'refi',n:'03',badge:'Closing Cost Audit',trust:'Net Present Value Recovery Engine',t:'Refinance & HELOC Break-Even Engine',d:'Evaluate the exact number of months required for monthly interest rate reductions to recover refinance closing costs.',b:'Launch Break-Even Tool'},
+  {id:'fico',n:'04',badge:'FICO® 8 & Experian',trust:'5-Pillar Bureau Weighting Model',t:'FICO® / Experian Credit Score Simulator',d:'Interactive sliders for credit utilization, payment history, hard inquiries, and credit age with full underwriting report generation.',b:'Launch Score Simulator'},
+  {id:'cards',n:'05',badge:'0% Intro APR Offers',trust:'Fee-Adjusted Net Transfer Savings',t:'0% Intro APR Balance Transfer Matcher',d:'Compare top US ($) and UK (£) 0% balance transfer cards across Excellent and Good credit tiers and calculate net transfer savings.',b:'Compare 0% APR Cards'}
+];
+const cardsDB={
+  US:{
+    excellent:[
+      {n:'Aura Sapphire Reserve Transfer',i:'0% Intro APR for 21 Months',m:21,feePct:3,f:'3% ($5 min)',a:'$0',apr:'18.24%–26.99% Var'},
+      {n:'Emerald Simplicity 0% Card',i:'0% Intro APR for 18 Months',m:18,feePct:0,f:'0% Intro Transfer Fee',a:'$0',apr:'19.24%–27.99% Var'},
+      {n:'US Freedom Unlimited Balance',i:'0% Intro APR for 15 Months',m:15,feePct:3,f:'3% ($5 min)',a:'$0',apr:'19.99%–28.49% Var'}
+    ],
+    good:[
+      {n:'Aura Core Slate Card',i:'0% Intro APR for 15 Months',m:15,feePct:3,f:'3% ($5 min)',a:'$0',apr:'21.49%–28.99% Var'},
+      {n:'Liberty Stride Balance Saver',i:'0% Intro APR for 12 Months',m:12,feePct:4,f:'4% ($10 min)',a:'$0',apr:'22.24%–29.49% Var'},
+      {n:'Metro Prime Clear Transfer',i:'1.99% Intro APR for 14 Months',m:14,feePct:3,f:'3% ($5 min)',a:'$39',apr:'22.99%–29.99% Var'}
+    ]
+  },
+  UK:{
+    excellent:[
+      {n:'Aura Barclay Platinum 29-Mo',i:'0% Balance Transfer for 29 Months',m:29,feePct:3.45,f:'3.45% Fee',a:'£0',apr:'24.9% APR Rep (Var)'},
+      {n:'Emerald NatWest No-Fee Card',i:'0% Balance Transfer for 19 Months',m:19,feePct:0,f:'0% Transfer Fee',a:'£0',apr:'23.9% APR Rep (Var)'},
+      {n:'UK Lloyds Ultra Balance Card',i:'0% Balance Transfer for 26 Months',m:26,feePct:2.99,f:'2.99% Fee',a:'£0',apr:'24.9% APR Rep (Var)'}
+    ],
+    good:[
+      {n:'Aura Tesco Foundation Card',i:'0% Balance Transfer for 14 Months',m:14,feePct:2.99,f:'2.99% Fee',a:'£0',apr:'27.9% APR Rep (Var)'},
+      {n:'Capital UK Balance Builder',i:'0% Balance Transfer for 12 Months',m:12,feePct:3,f:'3.00% Fee',a:'£0',apr:'29.9% APR Rep (Var)'},
+      {n:'Fluid UK Clear Step Card',i:'0% Balance Transfer for 9 Months',m:9,feePct:3,f:'3.00% Fee',a:'£0',apr:'32.9% APR Rep (Var)'}
+    ]
+  }
+};
+
+function fmt(v,d=2){return sym+Number(v).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d})}
+function menu(o){document.getElementById('backdrop').classList.toggle('hidden',!o);document.getElementById('drawer').classList.toggle('-translate-x-full',!o)}
+
+// Automatic Hash Routing so #privacy, #terms, #about work directly in Chrome Browser URL bar
+function nav(id,updateHash=true){
+  if(!validViews.includes(id))id='home';
+  menu(false);
+  validViews.forEach(k=>document.getElementById('v-'+k).classList.toggle('hidden',k!==id));
+  if(updateHash&&window.location.hash!=='#'+id){
+    history.pushState(null,'','#'+id);
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+window.addEventListener('hashchange',()=>{
+  const h=window.location.hash.replace('#','');
+  if(validViews.includes(h))nav(h,false);
+});
+
+function setReg(r){
+  reg=r;sym=r==='UK'?'£':'$';
+  document.querySelectorAll('.cur').forEach(e=>e.textContent=sym);
+  document.getElementById('regBadge').textContent=r==='UK'?'United Kingdom (£ GBP)':'United States ($ USD)';
+  calcM(false);calcD(false);calcR(false);calcF(false);renderCards();
+}
+function initHome(){
+  document.getElementById('homeGrid').innerHTML=tools.map(x=>`
+    <div class="card flex flex-col justify-between space-y-5 hover:border-emerald-500 transition">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 font-extrabold text-sm">${x.n}</div>
+          <span class="px-2.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-[11px] font-extrabold text-slate-800">${x.badge}</span>
+        </div>
+        <h3 class="text-lg font-extrabold text-slate-950 leading-snug">${x.t}</h3>
+        <p class="text-xs sm:text-sm font-bold text-slate-700 leading-relaxed">${x.d}</p>
+        <div class="pt-2 border-t border-slate-100 flex items-center gap-1.5 text-[11px] font-extrabold text-emerald-800">
+          <span>✓</span><span>${x.trust}</span>
+        </div>
+      </div>
+      <button onclick="nav('${x.id}')" class="btn-p">${x.b} →</button>
+    </div>
+  `).join('')+`
+    <!-- IN-GRID NATIVE AD CARD (6TH CARD IN CALCULATOR GRID) -->
+    <div class="native-ad rounded-2xl p-6 flex flex-col justify-between space-y-4">
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between">
+          <span class="px-2.5 py-1 rounded bg-emerald-800 text-white text-[10px] font-extrabold uppercase">Sponsored Native Ad</span>
+          <span class="text-[11px] font-extrabold text-emerald-800">FDIC / FSCS Insured</span>
+        </div>
+        <h3 class="text-lg font-extrabold text-slate-950">Institutional High-Yield Savings (Up to 5.15% APY)</h3>
+        <p class="text-xs sm:text-sm font-bold text-slate-700 leading-relaxed">Earn institutional money-market yields with $0 monthly maintenance fees and instant daily liquidity across US & UK banks.</p>
+        <div class="pt-2 border-t border-emerald-200 text-[11px] font-extrabold text-emerald-900">✓ Native In-Feed Ad Slot (High CTR)</div>
+      </div>
+      <button onclick="nav('mortgage')" class="w-full py-3 rounded-xl bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider transition">Compare Verified Rates →</button>
+    </div>`;
+}
+function calcM(m){
+  const P=+document.getElementById('mP').value||320000,a=+document.getElementById('mA').value||6.45,y=+document.getElementById('mT').value||30,n=y*12,r=(a/100)/12,mo=(P*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1),tot=mo*n,int=tot-P;
+  document.getElementById('mOut').textContent=fmt(mo,2);
+  document.getElementById('mIntOut').textContent=fmt(int,0);
+  const pP=Math.round((P/tot)*100);
+  document.getElementById('mPPct').textContent=`Principal Ratio: ${pP}% (${fmt(P,0)})`;
+  document.getElementById('mIPct').textContent=`Interest Ratio: ${100-pP}% (${fmt(int,0)})`;
+  document.getElementById('mBar').style.width=pP+'%';
+  let b=P,rows='';
+  for(let i=1;i<=y;i++){
+    let yP=0,yI=0;
+    for(let j=0;j<12;j++){const ii=b*r,pp=mo-ii;yI+=ii;yP+=pp;b=Math.max(0,b-pp)}
+    rows+=`<tr class="hover:bg-slate-50"><td class="p-2.5">Year ${i}</td><td class="p-2.5 text-emerald-700">${fmt(yP,0)}</td><td class="p-2.5 text-amber-700">${fmt(yI,0)}</td><td class="p-2.5">${fmt(b,0)}</td></tr>`;
+  }
+  document.getElementById('mTbl').innerHTML=rows;
+  if(m)openM('Official Amortization Schedule Generated',`Loan Principal: ${fmt(P,0)} at ${a}% APR over ${y} years produces an exact monthly P&I payment of ${fmt(mo,2)} and ${fmt(int,0)} in cumulative interest.`);
+}
+function calcD(m){
+  const b=+document.getElementById('dB').value||18500,cA=+document.getElementById('dCA').value||23.99,lA=+document.getElementById('dLA').value||9.49,n=+document.getElementById('dM').value||36,rC=(cA/100)/12,rL=(lA/100)/12,mC=(b*rC*Math.pow(1+rC,n))/(Math.pow(1+rC,n)-1),mL=(b*rL*Math.pow(1+rL,n))/(Math.pow(1+rL,n)-1),iC=mC*n-b,iL=mL*n-b,s=Math.max(0,iC-iL),moSave=Math.max(0,mC-mL);
+  document.getElementById('dSave').textContent=fmt(s,2);
+  document.getElementById('dSubTxt').textContent=`You reduce your monthly payment by ${fmt(moSave,2)}/mo and eliminate ${fmt(s,2)} in total interest charges over ${n} months.`;
+  document.getElementById('dCM').textContent=fmt(mC,2);document.getElementById('dCI').textContent=fmt(iC,0);
+  document.getElementById('dLM').textContent=fmt(mL,2);document.getElementById('dLI').textContent=fmt(iL,0);
+  if(m)openM('Debt Consolidation Audit Complete',`Refinancing ${fmt(b,0)} from ${cA}% APR credit cards into a ${lA}% APR fixed loan saves ${fmt(s,2)} in total interest and lowers your monthly obligation by ${fmt(moSave,2)}.`);
+}
+function calcR(m){
+  const b=+document.getElementById('rB').value||285000,oA=+document.getElementById('rOA').value||7.25,nA=+document.getElementById('rNA').value||5.85,c=+document.getElementById('rC').value||4200,n=300,rO=(oA/100)/12,rN=(nA/100)/12,mO=(b*rO*Math.pow(1+rO,n))/(Math.pow(1+rO,n)-1),mN=(b*rN*Math.pow(1+rN,n))/(Math.pow(1+rN,n)-1),sv=mO-mN,mos=sv>0?(c/sv).toFixed(1):0;
+  document.getElementById('rOldM').textContent=fmt(mO,2);
+  document.getElementById('rNewM').textContent=fmt(mN,2);
+  document.getElementById('rSavM').textContent=sv>0?fmt(sv,2)+'/mo':fmt(0,2);
+  document.getElementById('rMos').textContent=sv>0?mos+' Months':'No Rate Savings';
+  document.getElementById('rTxt').textContent=sv>0?`Monthly savings of ${fmt(sv,2)} recovers your ${fmt(c,0)} closing costs in ${mos} months, generating ${fmt(sv*60-c,0)} in net 5-year savings.`:'New Refinance APR must be lower than Current APR to recover closing costs.';
+  if(m)openM('Refinance Break-Even Report',document.getElementById('rTxt').textContent);
+}
+function calcF(showAd){
+  const u=+document.getElementById('fU').value,p=+document.getElementById('fP').value,i=+document.getElementById('fI').value,a=+document.getElementById('fA').value;
+  document.getElementById('fUV').textContent=u+'%';document.getElementById('fPV').textContent=p+'%';document.getElementById('fIV').textContent=i;document.getElementById('fAV').textContent=a+' Yrs';
+  const sc=Math.max(300,Math.min(850,Math.round(520+(p-70)*6.5+(100-u)*1.35-i*8+Math.min(a*4.5,75))));
+  document.getElementById('fOut').textContent=sc;
+  const bdg=document.getElementById('fBadge'),rep=document.getElementById('fReportTxt'),grid=document.getElementById('fRateGrid');
+  let mRate='5.75%',aRate='4.95%',cTerm='21–29 Mos 0%';
+  if(sc>=740){
+    bdg.textContent='Exceptional / Prime Tier-1 Borrower (740–850)';
+    bdg.className='inline-block px-4 py-1 rounded-full bg-emerald-100 text-emerald-950 font-extrabold text-xs';
+    rep.textContent=`With a ${sc} simulated score and ${u}% utilization, you meet Tier-1 underwriting criteria for the lowest published mortgage APRs (5.75%) and 0% intro APR balance transfer cards up to 21–29 months.`;
+  }else if(sc>=670){
+    mRate='6.45%';aRate='6.25%';cTerm='14–18 Mos 0%';
+    bdg.textContent='Good / Prime Credit Tier (670–739)';
+    bdg.className='inline-block px-4 py-1 rounded-full bg-teal-100 text-teal-950 font-extrabold text-xs';
+    rep.textContent=`With a ${sc} simulated score, you qualify for competitive prime rates. Lowering your credit utilization (${u}%) below 10% can elevate you into the 740+ Exceptional tier.`;
+  }else{
+    mRate='7.85%';aRate='9.45%';cTerm='9–12 Mos Intro';
+    bdg.textContent='Fair / Rebuilding Credit Tier (<670)';
+    bdg.className='inline-block px-4 py-1 rounded-full bg-amber-100 text-amber-950 font-extrabold text-xs';
+    rep.textContent=`At a ${sc} simulated score, focus on reducing revolving utilization (${u}%) below 30% and avoiding new hard inquiries (${i}) over the next 6 billing cycles to unlock prime consolidation offers.`;
+  }
+  grid.innerHTML=`
+    <div class="p-2 rounded-lg bg-white border border-emerald-200"><div class="text-slate-500">Est. Mortgage</div><div class="text-emerald-800 text-xs">${mRate} APR</div></div>
+    <div class="p-2 rounded-lg bg-white border border-emerald-200"><div class="text-slate-500">Est. Auto APR</div><div class="text-emerald-800 text-xs">${aRate} APR</div></div>
+    <div class="p-2 rounded-lg bg-white border border-emerald-200"><div class="text-slate-500">0% Card Match</div><div class="text-emerald-800 text-xs">${cTerm}</div></div>
+  `;
+  if(showAd)openM(`Credit Underwriting Report — Score: ${sc}`,`${rep.textContent} Estimated qualification: ${mRate} Mortgage APR | ${aRate} Auto APR | ${cTerm} Balance Transfer.`);
+}
+function setTier(t){
+  tier=t;
+  document.getElementById('btnEx').className=t==='excellent'?'py-2.5 px-3 rounded-lg font-extrabold text-xs bg-emerald-600 text-white shadow-xs transition':'py-2.5 px-3 rounded-lg font-extrabold text-xs text-slate-800 hover:bg-white transition';
+  document.getElementById('btnGd').className=t==='good'?'py-2.5 px-3 rounded-lg font-extrabold text-xs bg-emerald-600 text-white shadow-xs transition':'py-2.5 px-3 rounded-lg font-extrabold text-xs text-slate-800 hover:bg-white transition';
+  renderCards();
+}
+function renderCards(){
+  const amt=Math.max(500,+document.getElementById('cTransAmt').value||8500);
+  document.getElementById('cardsGrid').innerHTML=cardsDB[reg][tier].map((c,idx)=>{
+    const feeCost=amt*(c.feePct/100);
+    const oldInt=amt*(0.2399/12)*c.m;
+    const netSave=Math.max(0,oldInt-feeCost);
+    const moPay=((amt+feeCost)/c.m).toFixed(2);
+    return `
+    <div class="card flex flex-col justify-between space-y-5 hover:border-emerald-500 transition">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-[11px] font-extrabold text-emerald-800">Est. Net Savings: ${fmt(netSave,0)}</span>
+          <span class="text-[11px] font-extrabold text-slate-500">${reg} Tier-1</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-14 h-10 rounded-lg bg-slate-950 border-2 border-emerald-500 p-2 flex items-end shrink-0"><div class="w-3 h-2 rounded-xs bg-amber-400"></div></div>
+          <div><h3 class="text-base font-extrabold text-slate-950 leading-snug">${c.n}</h3><p class="text-xs font-extrabold text-emerald-600">${c.i}</p></div>
+        </div>
+        <div class="pt-3 border-t border-slate-100 text-xs font-bold text-slate-700 space-y-1.5">
+          <p>Balance Transfer Fee: <strong class="text-slate-950 font-extrabold">${c.f} (${fmt(feeCost,0)})</strong></p>
+          <p>Annual Membership Fee: <strong class="text-slate-950 font-extrabold">${c.a}</strong></p>
+          <p>0% Payoff Installment: <strong class="text-emerald-700 font-extrabold">${fmt(moPay,2)} / mo for ${c.m} mos</strong></p>
+          <p>Ongoing Variable APR: <strong class="text-slate-950 font-extrabold">${c.apr}</strong></p>
+        </div>
+      </div>
+      <button onclick="applyCard(${idx})" class="w-full py-3 rounded-xl bg-slate-950 hover:bg-emerald-700 text-white font-extrabold text-xs uppercase tracking-wider transition">Apply & Generate Savings Report →</button>
+    </div>`;
+  }).join('');
+}
+function applyCard(idx){
+  const c=cardsDB[reg][tier][idx];
+  const amt=Math.max(500,+document.getElementById('cTransAmt').value||8500);
+  const feeCost=amt*(c.feePct/100);
+  const oldInt=amt*(0.2399/12)*c.m;
+  const netSave=Math.max(0,oldInt-feeCost);
+  const moPay=((amt+feeCost)/c.m).toFixed(2);
+  const summary=`Transferring ${fmt(amt,0)} to the ${c.n} (${c.i}) incurs a one-time transfer fee of ${fmt(feeCost,2)} (${c.f}) and eliminates ${fmt(oldInt,0)} in revolving interest—yielding a net savings of ${fmt(netSave,2)}. Paying ${fmt(moPay,2)}/mo retires the entire debt interest-free before the promotional period ends.`;
+  document.getElementById('cardResultTitle').textContent=`${c.n} — Net Savings: ${fmt(netSave,2)}`;
+  document.getElementById('cardResultDetails').textContent=summary;
+  document.getElementById('cardResultBanner').classList.remove('hidden');
+  openM(`${c.n} Pre-Qualification`,summary);
+}
+function openM(t,d){
+  document.getElementById('mBody').innerHTML=`<h3 class="text-lg font-extrabold text-slate-950">${t}</h3><p class="text-xs sm:text-sm font-bold text-slate-800 leading-relaxed">${d}</p>`;
+  document.getElementById('modal').classList.remove('hidden');
+  document.getElementById('modal').classList.add('flex');
+}
+function closeM(){
+  document.getElementById('modal').classList.add('hidden');
+  document.getElementById('modal').classList.remove('flex');
+}
+window.addEventListener('DOMContentLoaded',()=>{
+  initHome();calcM(false);calcD(false);calcR(false);calcF(false);renderCards();
+  const initialHash=window.location.hash.replace('#','');
+  if(validViews.includes(initialHash))nav(initialHash,false);
+});
+</script>
+</body>
+</html>

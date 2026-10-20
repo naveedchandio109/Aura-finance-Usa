@@ -1,0 +1,18 @@
+{
+  "name": "aurafinance1",
+  "version": "1.0.0",
+  "description": "Institutional-grade US ($) & UK (£) financial calculators for mortgage APR, debt consolidation, refinance break-even, credit score simulation, and 0% balance transfers.",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "npx @tailwindcss/cli -i src/input.css -o style.css --minify"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}

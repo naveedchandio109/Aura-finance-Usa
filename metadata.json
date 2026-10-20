@@ -1,0 +1,8 @@
+{
+  "name": "Aura Finance",
+  "description": "Institutional-grade US & UK financial calculators for mortgage APR, debt consolidation, refinance break-even, credit score simulation, and 0% balance transfers.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
